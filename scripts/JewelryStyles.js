@@ -1,11 +1,14 @@
-import { getStyles } from "./database.js"
+import { getStyles, setStyle } from "./database.js"
 
 const styles = getStyles()
 
 document.addEventListener(
     "change",
     (event) => {
+        if (event.target.name === "style") {
+            setStyle(parseInt(event.target.value))
     }
+  }   
 )
 
 export const JewelryStyles = () => {
@@ -23,7 +26,7 @@ export const JewelryStyles = () => {
 
 
     // Join all of the strings in the array into a single string
-    html += listItems.join("")
+    html += listItemsArray.join("")
 
     html += "</ul>"
     return html
