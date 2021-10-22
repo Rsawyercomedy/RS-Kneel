@@ -2,7 +2,7 @@ import { getOrders } from "./database.js"
 
 const buildOrderListItem = (order) => {
     return `<li>
-        Order #${order.id} was placed on ${order.timestamp}
+        Order ${order.id} was placed on ${order.timestamp}
     </li>`
 }
 
@@ -15,7 +15,11 @@ export const Orders = () => {
 
     let html = "<ul>"
 
-    const listItems = orders.map(buildOrderListItem)
+    const listItems = orders.map(buildOrderListItem =>{
+     return `<li>
+       ${orders.id}
+     </li>`
+    })
 
     html += listItems.join("")
     html += "</ul>"

@@ -25,7 +25,7 @@ const database = {
         { id: 4, metal: "Platinum", price: 795.45 },
         { id: 5, metal: "Palladium", price: 1241.0 }
     ],
-    customOrders: [
+         orders: [
         {
             id: 1,
             metalId: 3,
@@ -54,6 +54,7 @@ export const getOrders = () => {
 }
 export const setMetal = (id) => {
     database.orderBuilder.metalId = id
+    console.log(database.orderBuilder)
 }
 
 export const setSize = (id) => {
@@ -63,3 +64,4 @@ export const setSize = (id) => {
 export const setStyle = (id) => {
     database.orderBuilder.styleId = id
 }
+
