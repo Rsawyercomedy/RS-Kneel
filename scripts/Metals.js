@@ -1,5 +1,5 @@
 import { getMetals, setMetal } from "./database.js"
-
+// Declairing the value of metals which is a function and its returning a array 
 const metals = getMetals()
 
 document.addEventListener(
@@ -10,13 +10,13 @@ document.addEventListener(
     }
   }   
 )
-
+// exporting our value of metals as a function or array?
 export const Metals = () => {
     let html = "<ul>"
      
     // This is how you have been converting objects to <li> elements
     for (const metal of metals) {
-       
+       // creating our radio buttons
         html += `<li>
             <input type="radio" name="metal" value="${metal.id}" /> ${metal.metal}
         </li>`
